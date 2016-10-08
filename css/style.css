@@ -22,3 +22,9 @@
 .scoreboard {
   border: 5px black solid;
 }
+#timer {
+  border: 1px black solid;
+  height: 35px; 
+  width: 75px;
+
+}

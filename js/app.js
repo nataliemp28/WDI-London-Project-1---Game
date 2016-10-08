@@ -19,6 +19,20 @@ $(function() {
 
     return wordArray.join('');
   }
+  
+  var count=30;
+  var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+  function timer() {
+    count=count-1;
+    if (count <= 0) {
+      clearInterval(counter);
+      alert("You're out of time");
+      return;
+    }
+    $("#timer").text(count + " secs");
+    //Do code for showing the number of seconds here
+  }
+
 
   $('#selectorButtonOne').on('click', function() {
     var $displayBox = $('#scrambled');
@@ -41,7 +55,7 @@ $(function() {
       alert("Correct!");
       score += playerWord.length;
       $('#playerScore').text(score);
-      
+
     }
     else {
       alert("Learn how to spell dummy!!");
@@ -53,51 +67,56 @@ $(function() {
     return;
 
   });
-  //
-  //
+
+  $('#selectorButtonThree').on('click', function() {
+    var $displayBox = $('#scrambled');
+    activeWord = categoryThree[Math.floor(Math.random() * categoryThree.length)];
+    console.log(activeWord);
+
+    var shuffledWord = shuffleWord(activeWord);
+    $displayBox.text(shuffledWord);
+  });
+
+  $('#selectorButtonTwo').on('click', function() {
+    var $displayBox = $('#scrambled');
+    activeWord = categoryTwo[Math.floor(Math.random() * categoryTwo.length)];
+    console.log(activeWord);
+
+    var shuffledWord = shuffleWord(activeWord);
+    $displayBox.text(shuffledWord);
+  });
 
 
 
-  // .off( "submit" ). to turn off.
-  //
-  // $( "#target" ).submit(function( event ) {
-  //   alert( "Handler for .submit() called." );
+
+
+
+
+
+
+
+
+
+  // $('#playerInput').submit(function(event) {
   //   event.preventDefault();
   //
-
-  // var activeWord = "";
-
+  //   var playerWord = $('#currentPlayerWord').val();
   //
-  // $('#selectorButtonTwo').on('click', function() {
-  //   var $displayBox = $('#scrambled');
-  //   activeWord = categoryTwo[Math.floor(Math.random() * categoryTwo.length)];
+  //   if (playerWord === activeWord) {
+  //     alert("Correct!");
+  //     score += playerWord.length;
+  //     $('#playerScore').text(score);
+  //
+  //   }
+  //   else {
+  //     alert("Learn how to spell dummy!!");
+  //   }
   //   console.log(activeWord);
+  //   console.log(playerWord);
   //
-  //   //need to shuffle word here!!!!
-  //   var shuffledWord = shuffleWord(activeWord);
-  //   $displayBox.text(shuffledWord);
+  //   $('#currentPlayerWord').val("");
+  //   return;
   //
-  //   // playerWord = this.innerHTML.toLowerCase();
-  //
-  //   $('#playerInput').submit(function(event) {
-  //     event.preventDefault();
-  //
-  //     var playerWord = $('#currentPlayerWord').val();
-  //     // var activeWord = "";
-  //
-  //     if (playerWord.textContent === activeWord.textContent) {
-  //       alert("Correct!");
-  //       // score ++;
-  //       // $('#playerScore').text(score);
-  //       // pointsDisplay.textContent = score;
-  //     }
-  //     else {
-  //       alert("Learn how to spell dummy!!");
-  //     }
-  //     console.log(activeWord);
-  //     console.log(playerWord);
-
-  //   });
   // });
 
 
