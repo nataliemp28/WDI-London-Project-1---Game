@@ -1,6 +1,6 @@
 $(function() {
 
-  var categoryOne = ["javascript", "jquery", "console"];
+  var categoryOne = ["javascript", "jquery", "console", "array", "bind", "split", "join", "concatenate"];
   var categoryTwo = ["mojito", "cosmopolitan", "pina colada"];
   var categoryThree = ["kiwi", "snifter", "jandals"];
   var activeWord;
@@ -27,49 +27,80 @@ $(function() {
 
     //need to shuffle word here!!!!
     var shuffledWord = shuffleWord(activeWord);
-
     $displayBox.text(shuffledWord);
 
     // playerWord = this.innerHTML.toLowerCase();
+  });
 
-    $('#playerInput').submit(function(event) {
-      event.preventDefault();
+  $('#playerInput').submit(function(event) {
+    event.preventDefault();
 
-      var playerWord = $('#currentPlayerWord').val();
-      // var activeWord = "";
+    var playerWord = $('#currentPlayerWord').val();
 
-      if (playerWord.textContent === activeWord.textContent) {
-        alert("Correct!");
-        score ++;
-        $('#playerScore').text(score);
-        // pointsDisplay.textContent = score;
+    if (playerWord === activeWord) {
+      alert("Correct!");
+      score += playerWord.length;
+      $('#playerScore').text(score);
+      
+    }
+    else {
+      alert("Learn how to spell dummy!!");
+    }
+    console.log(activeWord);
+    console.log(playerWord);
 
-      }
-      else {
-        alert("Learn how to spell dummy!!");
-      }
-      console.log(activeWord);
-      console.log(playerWord);
-
-      $('#currentPlayerWord').val("");
-
-    });
-
-
-
-
-
-
-    // .off( "submit" ). to turn off.
-    //
-    // $( "#target" ).submit(function( event ) {
-    //   alert( "Handler for .submit() called." );
-    //   event.preventDefault();
-    //
-
-    // var activeWord = "";
+    $('#currentPlayerWord').val("");
+    return;
 
   });
+  //
+  //
+
+
+
+  // .off( "submit" ). to turn off.
+  //
+  // $( "#target" ).submit(function( event ) {
+  //   alert( "Handler for .submit() called." );
+  //   event.preventDefault();
+  //
+
+  // var activeWord = "";
+
+  //
+  // $('#selectorButtonTwo').on('click', function() {
+  //   var $displayBox = $('#scrambled');
+  //   activeWord = categoryTwo[Math.floor(Math.random() * categoryTwo.length)];
+  //   console.log(activeWord);
+  //
+  //   //need to shuffle word here!!!!
+  //   var shuffledWord = shuffleWord(activeWord);
+  //   $displayBox.text(shuffledWord);
+  //
+  //   // playerWord = this.innerHTML.toLowerCase();
+  //
+  //   $('#playerInput').submit(function(event) {
+  //     event.preventDefault();
+  //
+  //     var playerWord = $('#currentPlayerWord').val();
+  //     // var activeWord = "";
+  //
+  //     if (playerWord.textContent === activeWord.textContent) {
+  //       alert("Correct!");
+  //       // score ++;
+  //       // $('#playerScore').text(score);
+  //       // pointsDisplay.textContent = score;
+  //     }
+  //     else {
+  //       alert("Learn how to spell dummy!!");
+  //     }
+  //     console.log(activeWord);
+  //     console.log(playerWord);
+
+  //   });
+  // });
+
+
 
 
 
