@@ -3,36 +3,70 @@ $(function() {
   var categoryOne = ["javascript", "jquery", "console"];
   var categoryTwo = ["mojito", "cosmopolitan", "pina colada"];
   var categoryThree = ["kiwi", "snifter", "jandals"];
-  var activeWord = [];
+  var activeWord;
+  var score = 0;
+  // var pointsDisplay = document.getElementById();
 
+  function shuffleWord(word) {
+    var j, x, i;
+    var wordArray = word.split('');
 
-  $('#selectorButtonOne').on('click', function() {
-    var randomWordOne = categoryOne[Math.floor(Math.random() * categoryOne.length)];
-    activeWord.push(randomWordOne);
-    console.log(activeWord);
-    activeWord.toString();
+    for (i = wordArray.length; i; i--) {
+      j = Math.floor(Math.random() * i);
+      x = wordArray[i - 1];
+      wordArray[i - 1] = wordArray[j];
+      wordArray[j] = x;
+    }
 
-//need to shuffle word first!!!!
-
-
-var $displayBox = $('#scrambled').append(activeWord);
-$($displayBox).css({"background-color": "yellow", "font-size": "60px", "text-align": "center", "margin": "20px", "font-family": "Helvetica"});
-
-
-
-
-    // activeWord.toString();
-    // activeWord.split(" ");
-  //  console.log(activeWord);
-
-$('#submitButton').on('submit', function(e) {
-  e.preventDefault();
-  if ('#playerInput' === activeWord) {
-    console.log("player wins!");
+    return wordArray.join('');
   }
 
-  var activeWord = "";
-});
+  $('#selectorButtonOne').on('click', function() {
+    var $displayBox = $('#scrambled');
+    activeWord = categoryOne[Math.floor(Math.random() * categoryOne.length)];
+    console.log(activeWord);
+
+    //need to shuffle word here!!!!
+    var shuffledWord = shuffleWord(activeWord);
+
+    $displayBox.text(shuffledWord);
+
+        // playerWord = this.innerHTML.toLowerCase();
+
+    $('#playerInput').submit(function(event) {
+      event.preventDefault();
+
+      var playerWord = $('#currentPlayerWord').val();
+      // var activeWord = "";
+
+      if (playerWord === activeWord) {
+        alert("Correct!");
+        score ++;
+        $("#playerScore").val(score);
+
+      }
+      else {
+        alert("Learn how to spell dummy!!");
+      }
+
+      console.log(activeWord);
+      console.log(playerWord);
+
+    });
+
+
+
+
+
+
+    // .off( "submit" ). to turn off.
+    //
+    // $( "#target" ).submit(function( event ) {
+    //   alert( "Handler for .submit() called." );
+    //   event.preventDefault();
+    //
+
+    // var activeWord = "";
 
   });
 
