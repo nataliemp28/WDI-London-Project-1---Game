@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Natalie's game project</title>
+    <title>Natalie's Basic Word Unscrambler</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </head>
   <body>
-    <h1>Project 1</h1>
+    <h1>Basic Word Unscrambler</h1>
 
+<main>
+  <h2>Please select your category below</h2>
+
+  <button type="button" name="CategoryOne" id="selectorButtonOne">Category One....tbc</button>
+  <button type="button" name="CategoryTwo" id="selectorButtonTwo">Category Two....tbc</button>
+  <button type="button" name="CategoryThree" id="selectorButtonThree">Category Three....tbc</button>
+
+<div id="scrambled"></div>
+
+
+  <form action="type_submit">
+    Type here quickly!<input type="text" name="userInput" id="playerInput"><br>
+  </form>
+      <input type="submit" value="Submit" id="submitButton">
+<!--
+  <button type="submit" name="submitButton">Submit your answer here</button> -->
+
+<p>Score Keeper</p>
+<div id="score"></div>
+
+
+<button type="button" name="reset">PLAY AGAIN?!</button>
+
+</main>
   </body>
 </html>
