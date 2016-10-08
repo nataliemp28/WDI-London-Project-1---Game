@@ -5,7 +5,6 @@ $(function() {
   var categoryThree = ["kiwi", "snifter", "jandals"];
   var activeWord;
   var score = 0;
-  // var pointsDisplay = document.getElementById();
 
   function shuffleWord(word) {
     var j, x, i;
@@ -31,7 +30,7 @@ $(function() {
 
     $displayBox.text(shuffledWord);
 
-        // playerWord = this.innerHTML.toLowerCase();
+    // playerWord = this.innerHTML.toLowerCase();
 
     $('#playerInput').submit(function(event) {
       event.preventDefault();
@@ -39,18 +38,20 @@ $(function() {
       var playerWord = $('#currentPlayerWord').val();
       // var activeWord = "";
 
-      if (playerWord === activeWord) {
+      if (playerWord.textContent === activeWord.textContent) {
         alert("Correct!");
         score ++;
-        $("#playerScore").val(score);
+        $('#playerScore').text(score);
+        // pointsDisplay.textContent = score;
 
       }
       else {
         alert("Learn how to spell dummy!!");
       }
-
       console.log(activeWord);
       console.log(playerWord);
+
+      $('#currentPlayerWord').val("");
 
     });
 
