@@ -23,6 +23,8 @@ $(function() {
   }
 
   //count down timer
+
+
   var count=10;
   var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
   function timer() {
@@ -35,9 +37,6 @@ $(function() {
     $("#timer").text(count + " secs");
 
 
-    $('#reset').on('click', function() {
-      $('#scrambled').empty();
-    })
     // $('#timer').text("");
     // $('#currentPlayerWord').val("");
 
@@ -74,12 +73,27 @@ $(function() {
 
     $('#currentPlayerWord').val("");
 
+
   });
 
 
 
+      $('#reset').on('click', function() {
+        $('#scrambled').empty();
 
+      var count=10;
+      var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+      function timer() {
+        count=count-1;
+        if (count <= 0) {
+          clearInterval(counter);
+          alert("You're out of time");
+          return;
+        }
+        $("#timer").text(count + " secs");
 
+  }
+});
 
 
   //button two and button three. Very repetitive.
@@ -100,6 +114,7 @@ $(function() {
     var shuffledWord = shuffleWord(activeWord);
     $displayBox.text(shuffledWord);
 
+  });
   });
 
 
@@ -158,5 +173,5 @@ $(function() {
   //
 
 
-
-});
+//
+// });
