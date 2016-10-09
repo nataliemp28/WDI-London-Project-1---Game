@@ -6,6 +6,8 @@ $(function() {
   var activeWord;
   var score = 0;
 
+
+  //shuffle function
   function shuffleWord(word) {
     var j, x, i;
     var wordArray = word.split('');
@@ -19,8 +21,9 @@ $(function() {
 
     return wordArray.join('');
   }
-  
-  var count=30;
+
+  //count down timer
+  var count=10;
   var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
   function timer() {
     count=count-1;
@@ -30,16 +33,22 @@ $(function() {
       return;
     }
     $("#timer").text(count + " secs");
-    //Do code for showing the number of seconds here
+
+
+    $('#reset').on('click', function() {
+      $('#scrambled').empty();
+    })
+    // $('#timer').text("");
+    // $('#currentPlayerWord').val("");
+
   }
 
-
+  //button one on click function
   $('#selectorButtonOne').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryOne[Math.floor(Math.random() * categoryOne.length)];
     console.log(activeWord);
 
-    //need to shuffle word here!!!!
     var shuffledWord = shuffleWord(activeWord);
     $displayBox.text(shuffledWord);
 
@@ -64,10 +73,16 @@ $(function() {
     console.log(playerWord);
 
     $('#currentPlayerWord').val("");
-    return;
 
   });
 
+
+
+
+
+
+
+  //button two and button three. Very repetitive.
   $('#selectorButtonThree').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryThree[Math.floor(Math.random() * categoryThree.length)];
@@ -84,6 +99,7 @@ $(function() {
 
     var shuffledWord = shuffleWord(activeWord);
     $displayBox.text(shuffledWord);
+
   });
 
 
