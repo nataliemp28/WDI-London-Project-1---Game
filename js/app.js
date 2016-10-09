@@ -1,38 +1,37 @@
 $(function() {
 
   var categoryOne = ["javascript", "jquery", "console", "array", "bind", "split", "join", "concatenate"];
-  var categoryTwo = ["mojito", "cosmopolitan", "pina colada"];
-  var categoryThree = ["kiwi", "snifter", "jandals"];
+  var categoryTwo = ["mojito", "cosmopolitan", "margarit", "martini", "manhattan", "negroni", "sour"];
+  var categoryThree = ["wellington", "london", "paris", "canberra", "tokyo", "barcelona", "athens"];
   var activeWord;
   var score = 0;
-
 
   //shuffle function
   function shuffleWord(word) {
     var j, x, i;
     var wordArray = word.split('');
-
     for (i = wordArray.length; i; i--) {
       j = Math.floor(Math.random() * i);
       x = wordArray[i - 1];
       wordArray[i - 1] = wordArray[j];
       wordArray[j] = x;
     }
-
     return wordArray.join('');
   }
-
   //count down timer
-  var count=10;
-  var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+  var count = 10;
+  var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
   function timer() {
     count=count-1;
-    if (count <= 0) {
+    if (count <=5) {
+      $("#timer").css("color", "red");
+    }
+    if (count === 0) {
       clearInterval(counter);
       alert("You're out of time");
       return;
     }
-    $("#timer").text(count + " secs");
+    $("#timer").text(count + " Seconds");
   }
 
   //button one on click function
@@ -43,10 +42,7 @@ $(function() {
 
     var shuffledWord = shuffleWord(activeWord);
     $displayBox.text(shuffledWord);
-
-    // playerWord = this.innerHTML.toLowerCase();
   });
-
 
   $('#playerInput').submit(function(event) {
     event.preventDefault();
@@ -68,7 +64,6 @@ $(function() {
     $('#currentPlayerWord').val("");
 
   });
-
   //resets the scrambled word and score so that player can play again. Needed to insert the counter again
   //therefore quite repetitive but it works!
   //resets the score back to zero to re-increment
@@ -87,11 +82,8 @@ $(function() {
         return;
       }
       $('#timer').text(count + " secs");
-
-
     }
   });
-
 
   //button two and button three. Very repetitive.
   $('#selectorButtonThree').on('click', function() {
@@ -110,7 +102,6 @@ $(function() {
 
     var shuffledWord = shuffleWord(activeWord);
     $displayBox.text(shuffledWord);
-
   });
 });
 

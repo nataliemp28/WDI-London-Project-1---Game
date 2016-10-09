@@ -12,66 +12,42 @@
   <main>
     <h2>Please select your category below</h2>
 
-    <button type="button" name="CategoryOne" id="selectorButtonOne">Category One....tbc</button>
-    <button type="button" name="CategoryTwo" id="selectorButtonTwo">Category Two....tbc</button>
-    <button type="button" name="CategoryThree" id="selectorButtonThree">Category Three....tbc</button>
+    <button type="button" name="CategoryOne" id="selectorButtonOne">Dev Lingo</button>
+    <button type="button" name="CategoryTwo" id="selectorButtonTwo">Cocktails</button>
+    <button type="button" name="CategoryThree" id="selectorButtonThree">Capital Cities</button>
 
     <div id="scrambled"></div>
-
 
     <form id="playerInput" action="type_submit">
       <p>Type here quickly!</p>
       <input type="text"  id="currentPlayerWord">
       <input type="submit" name="userInput">
+    </form>
 
-      </form>
+    <div id="timer" type="reset"></div>
 
+    <div class="scoreboard">
+      <h2>Scoreboard</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td id="playerScore" type="reset">0</td>
+            <td id="highScore">0</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>You</th>
+            <th>High Score</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
 
-
-
-      <!-- <form id="target" action="destination.html">
-      <input type="text" value="Hello there">
-      <input type="submit" value="Go">
-    </form> -->
-
-    <!-- <input type="submit" value="Submit Word" id="submitButton"> -->
-
-    <!-- The submit event is sent to an element when the user is attempting to submit a form. It can only be
-    attached to <form> elements. Forms can be submitted either by clicking an explicit <input type="submit">,
-    <input type="image">, or <button type="submit">, or by pressing Enter when certain form elements have focus.
-  -->
-
-  <!--
-  <button type="submit" name="submitButton">Submit your answer here</button> -->
-  <!--
-  <p>Score Keeper</p>
-  <div id="score">0</div> -->
-
-  <div id="timer" type="reset"></div>
-
-  <div class="scoreboard">
-    <h2>Scoreboard</h2>
-    <table>
-      <tbody>
-        <tr>
-          <td id="playerScore" type="reset">0</td>
-          <td id="highScore">0</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th>You</th>
-          <th>High Score</th>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <span>
-    <button type="reset" id="reset" align="right">Do you want to play again?!</button>
-  </span>
-
-
-</main>
+    <span>
+      <button type="reset" id="reset" align="right">Do you want to play again?!</button>
+    </span>
+    
+  </main>
 </body>
 </html>
