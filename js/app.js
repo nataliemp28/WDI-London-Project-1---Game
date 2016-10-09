@@ -23,8 +23,6 @@ $(function() {
   }
 
   //count down timer
-
-
   var count=10;
   var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
   function timer() {
@@ -35,11 +33,6 @@ $(function() {
       return;
     }
     $("#timer").text(count + " secs");
-
-
-    // $('#timer').text("");
-    // $('#currentPlayerWord').val("");
-
   }
 
   //button one on click function
@@ -54,10 +47,11 @@ $(function() {
     // playerWord = this.innerHTML.toLowerCase();
   });
 
+
   $('#playerInput').submit(function(event) {
     event.preventDefault();
 
-    var playerWord = $('#currentPlayerWord').val();
+    var playerWord = $('#currentPlayerWord').val().toLowerCase();
 
     if (playerWord === activeWord) {
       alert("Correct!");
@@ -73,27 +67,30 @@ $(function() {
 
     $('#currentPlayerWord').val("");
 
-
   });
 
+  //resets the scrambled word and score so that player can play again. Needed to insert the counter again
+  //therefore quite repetitive but it works!
+  //resets the score back to zero to re-increment
+  $('#reset').on('click', function() {
+    $('#scrambled').empty();
+    score = 0;
+    $('#playerScore').text('0');
+
+    var count = 10;
+    var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+    function timer() {
+      count=count-1;
+      if (count <= 0) {
+        clearInterval(counter);
+        alert("You're out of time");
+        return;
+      }
+      $('#timer').text(count + " secs");
 
 
-      $('#reset').on('click', function() {
-        $('#scrambled').empty();
-
-      var count=10;
-      var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
-      function timer() {
-        count=count-1;
-        if (count <= 0) {
-          clearInterval(counter);
-          alert("You're out of time");
-          return;
-        }
-        $("#timer").text(count + " secs");
-
-  }
-});
+    }
+  });
 
 
   //button two and button three. Very repetitive.
@@ -115,7 +112,7 @@ $(function() {
     $displayBox.text(shuffledWord);
 
   });
-  });
+});
 
 
 
@@ -128,49 +125,49 @@ $(function() {
 
 
 
-  // $('#playerInput').submit(function(event) {
-  //   event.preventDefault();
-  //
-  //   var playerWord = $('#currentPlayerWord').val();
-  //
-  //   if (playerWord === activeWord) {
-  //     alert("Correct!");
-  //     score += playerWord.length;
-  //     $('#playerScore').text(score);
-  //
-  //   }
-  //   else {
-  //     alert("Learn how to spell dummy!!");
-  //   }
-  //   console.log(activeWord);
-  //   console.log(playerWord);
-  //
-  //   $('#currentPlayerWord').val("");
-  //   return;
-  //
-  // });
+// $('#playerInput').submit(function(event) {
+//   event.preventDefault();
+//
+//   var playerWord = $('#currentPlayerWord').val();
+//
+//   if (playerWord === activeWord) {
+//     alert("Correct!");
+//     score += playerWord.length;
+//     $('#playerScore').text(score);
+//
+//   }
+//   else {
+//     alert("Learn how to spell dummy!!");
+//   }
+//   console.log(activeWord);
+//   console.log(playerWord);
+//
+//   $('#currentPlayerWord').val("");
+//   return;
+//
+// });
 
 
 
 
 
 
-  //
-  //
-  //
-  // $('#selectorButtonTwo').on('click', function() {
-  //   var randomWordTwo = categoryTwo[Math.floor(Math.random() * categoryTwo.length)];
-  //   activeWord.push(randomWordTwo);
-  //   console.log(randomWordTwo);
-  // });
-  //
-  // $('#selectorButtonThree').on('click', function() {
-  //   var randomWordThree = categoryThree[Math.floor(Math.random() * categoryThree.length)];
-  //   activeWord.push(randomWordThree);
-  //
-  //   console.log(randomWordThree);
-  // });
-  //
+//
+//
+//
+// $('#selectorButtonTwo').on('click', function() {
+//   var randomWordTwo = categoryTwo[Math.floor(Math.random() * categoryTwo.length)];
+//   activeWord.push(randomWordTwo);
+//   console.log(randomWordTwo);
+// });
+//
+// $('#selectorButtonThree').on('click', function() {
+//   var randomWordThree = categoryThree[Math.floor(Math.random() * categoryThree.length)];
+//   activeWord.push(randomWordThree);
+//
+//   console.log(randomWordThree);
+// });
+//
 
 
 //
