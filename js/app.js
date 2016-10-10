@@ -29,7 +29,9 @@ $(function() {
   }
   //count down timer
 
-  $("#startButton").on('click', function() {
+  $("#startButton").on('click', counter)
+
+  function counter() {
     var count = 10;
     var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
     function timer() {
@@ -44,12 +46,7 @@ $(function() {
       }
       $("#timer").text(count + " Seconds");
     }
-  });
-
-
-
-
-
+  };
 
   // });
 
@@ -87,6 +84,7 @@ $(function() {
     }
     else {
       alert("Learn how to spell dummy!!");
+      $('#playerScore').text(score -=1);
     }
     // console.log(activeWord);
     // console.log(playerWord);
@@ -96,10 +94,7 @@ $(function() {
     highScore.push(score);
     var currentHighScore = Math.max.apply(Math,highScore);
     $('#highScore').text(currentHighScore);
-
-
   });
-
 
   //resets the scrambled word and score so that player can play again. Needed to insert the counter again
   //therefore quite repetitive but it works!
@@ -109,22 +104,12 @@ $(function() {
     score = 0;
     $('#playerScore').text('0');
     $('#currentPlayerWord').val("");
+    counter();
 
-    var count = 10;
-    var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-    function timer() {
-      count=count-1;
-      if (count <= 0) {
-        clearInterval(counter);
-        alert("You're out of time");
-        return;
-      }
-      $('#timer').text(count + " secs");
+    highScore.push(score);
+    var currentHighScore = Math.max.apply(Math,highScore);
+    $('#highScore').text(currentHighScore);
 
-      highScore.push(score);
-      var currentHighScore = Math.max.apply(Math,highScore);
-      $('#highScore').text(currentHighScore);
-    }
   });
 
   //  button two and button three. Very repetitive.
