@@ -90,7 +90,6 @@ $(function() {
     // console.log(playerWord);
 
     $('#currentPlayerWord').val("");
-
     highScore.push(score);
     var currentHighScore = Math.max.apply(Math,highScore);
     $('#highScore').text(currentHighScore);
