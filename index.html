@@ -4,17 +4,24 @@
   <title>Natalie's Basic Word Unscrambler</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/category-one.js"></script>
+  <script type="text/javascript" src="js/category-two.js"></script>
+  <script type="text/javascript" src="js/category-three.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
   <h1>Basic Word Unscrambler</h1>
 
   <main>
+
+
+    <button type="button" name="start-button" id="startButton">Click here to start the game counter</button>
     <h2>Please select your category below</h2>
 
-    <button type="button" name="CategoryOne" id="selectorButtonOne">Dev Lingo</button>
-    <button type="button" name="CategoryTwo" id="selectorButtonTwo">Cocktails</button>
-    <button type="button" name="CategoryThree" id="selectorButtonThree">Capital Cities</button>
+    <button type="button" name="CategoryOne" id="selectorButtonOne" class="selectors">Dev Lingo</button>
+    <button type="button" name="CategoryTwo" id="selectorButtonTwo" class="selectors">Cocktails</button>
+    <button type="button" name="CategoryThree" id="selectorButtonThree" class="selectors">Capital Cities</button>
+
 
     <div id="scrambled"></div>
 
@@ -38,7 +45,7 @@
         <tfoot>
           <tr>
             <th>You</th>
-            <th>High Score</th>
+            <th>Current High Score</th>
           </tr>
         </tfoot>
       </table>
@@ -47,7 +54,7 @@
     <span>
       <button type="reset" id="reset" align="right">Do you want to play again?!</button>
     </span>
-    
+
   </main>
 </body>
 </html>

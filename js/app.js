@@ -1,10 +1,19 @@
+// console.log("categoryOne (outside):", categoryOne);
 $(function() {
+  // console.log("categoryOne (inside):", window.categoryOne);
 
-  var categoryOne = ["javascript", "jquery", "console", "array", "bind", "split", "join", "concatenate"];
-  var categoryTwo = ["mojito", "cosmopolitan", "margarit", "martini", "manhattan", "negroni", "sour"];
-  var categoryThree = ["wellington", "london", "paris", "canberra", "tokyo", "barcelona", "athens"];
+  var categoryOne = window.categoryOne;
+  var categoryTwo = window.categoryTwo;
+  var categoryThree = window.categoryThree;
   var activeWord;
   var score = 0;
+  var highScore = [];
+  var updatedHighScore = 0;
+
+  //   var categoryOne = $('#selectorButtonOne');
+  //   $.each(window.categoryOne, function(i, categoryOne) {
+  //     $selectorButtonOne.append
+  // });
 
   //shuffle function
   function shuffleWord(word) {
@@ -19,22 +28,44 @@ $(function() {
     return wordArray.join('');
   }
   //count down timer
-  var count = 10;
-  var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-  function timer() {
-    count=count-1;
-    if (count <=5) {
-      $("#timer").css("color", "red");
+
+  $("#startButton").on('click', function() {
+    var count = 10;
+    var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+    function timer() {
+      count=count-1;
+      if (count <=5) {
+        $("#timer").css("color", "red");
+      }
+      if (count === 0) {
+        clearInterval(counter);
+        alert("You're out of time");
+        return;
+      }
+      $("#timer").text(count + " Seconds");
     }
-    if (count === 0) {
-      clearInterval(counter);
-      alert("You're out of time");
-      return;
-    }
-    $("#timer").text(count + " Seconds");
-  }
+  });
+
+
+
+
+
+
+  // });
 
   //button one on click function
+
+  //
+  //
+  // $('.selectors').on('click', function() {
+  //   var $displayBox = $('#scrambled');
+  //   activeWord = this.selectors[Math.floor(Math.random() * this.selectors.length)];
+  //   console.log(activeWord);
+  //
+  //   var shuffledWord = shuffleWord(activeWord);
+  //   $displayBox.text(shuffledWord);
+  // });
+
   $('#selectorButtonOne').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryOne[Math.floor(Math.random() * categoryOne.length)];
@@ -54,7 +85,10 @@ $(function() {
       score += playerWord.length;
       $('#playerScore').text(score);
 
+      //highscore doesn't work yet :(
+
     }
+
     else {
       alert("Learn how to spell dummy!!");
     }
@@ -63,7 +97,15 @@ $(function() {
 
     $('#currentPlayerWord').val("");
 
+    highScore.push(score);
+    var currentHighScore = Math.max.apply(Math,highScore);
+
+    $('#highScore').text(currentHighScore);
+
+
   });
+
+
   //resets the scrambled word and score so that player can play again. Needed to insert the counter again
   //therefore quite repetitive but it works!
   //resets the score back to zero to re-increment
@@ -71,6 +113,7 @@ $(function() {
     $('#scrambled').empty();
     score = 0;
     $('#playerScore').text('0');
+    $('#highScore').text(updatedHighScore);
 
     var count = 10;
     var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
@@ -85,7 +128,7 @@ $(function() {
     }
   });
 
-  //button two and button three. Very repetitive.
+  //  button two and button three. Very repetitive.
   $('#selectorButtonThree').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryThree[Math.floor(Math.random() * categoryThree.length)];
@@ -105,61 +148,13 @@ $(function() {
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-// $('#playerInput').submit(function(event) {
-//   event.preventDefault();
 //
-//   var playerWord = $('#currentPlayerWord').val();
 //
-//   if (playerWord === activeWord) {
-//     alert("Correct!");
-//     score += playerWord.length;
-//     $('#playerScore').text(score);
-//
-//   }
-//   else {
-//     alert("Learn how to spell dummy!!");
-//   }
+// $('.selectors').on('click', function() {
+//   var $displayBox = $('#scrambled');
+//   activeWord = this.selectors[Math.floor(Math.random() * this.length)];
 //   console.log(activeWord);
-//   console.log(playerWord);
 //
-//   $('#currentPlayerWord').val("");
-//   return;
-//
-// });
-
-
-
-
-
-
-//
-//
-//
-// $('#selectorButtonTwo').on('click', function() {
-//   var randomWordTwo = categoryTwo[Math.floor(Math.random() * categoryTwo.length)];
-//   activeWord.push(randomWordTwo);
-//   console.log(randomWordTwo);
-// });
-//
-// $('#selectorButtonThree').on('click', function() {
-//   var randomWordThree = categoryThree[Math.floor(Math.random() * categoryThree.length)];
-//   activeWord.push(randomWordThree);
-//
-//   console.log(randomWordThree);
-// });
-//
-
-
-//
+//   var shuffledWord = shuffleWord(activeWord);
+//   $displayBox.text(shuffledWord);
 // });

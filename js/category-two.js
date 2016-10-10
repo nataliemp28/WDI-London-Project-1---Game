@@ -1,0 +1,20 @@
+  var categoryTwo = [
+    "mojito",
+    "cosmopolitan",
+    "margarita",
+    "martini",
+    "manhattan",
+    "negroni",
+    "sour",
+    "sidecar",
+    "highball",
+    "bellini",
+    "daiquiri",
+    "hurricane",
+    "appletini",
+    "mudslide",
+    "screwdriver",
+    "highball",
+    "mimosa",
+    
+  ];
