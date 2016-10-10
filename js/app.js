@@ -84,22 +84,17 @@ $(function() {
       alert("Correct!");
       score += playerWord.length;
       $('#playerScore').text(score);
-
-      //highscore doesn't work yet :(
-
     }
-
     else {
       alert("Learn how to spell dummy!!");
     }
-    console.log(activeWord);
-    console.log(playerWord);
+    // console.log(activeWord);
+    // console.log(playerWord);
 
     $('#currentPlayerWord').val("");
 
     highScore.push(score);
     var currentHighScore = Math.max.apply(Math,highScore);
-
     $('#highScore').text(currentHighScore);
 
 
@@ -113,7 +108,7 @@ $(function() {
     $('#scrambled').empty();
     score = 0;
     $('#playerScore').text('0');
-    $('#highScore').text(updatedHighScore);
+    $('#currentPlayerWord').val("");
 
     var count = 10;
     var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
@@ -125,6 +120,10 @@ $(function() {
         return;
       }
       $('#timer').text(count + " secs");
+
+      highScore.push(score);
+      var currentHighScore = Math.max.apply(Math,highScore);
+      $('#highScore').text(currentHighScore);
     }
   });
 
