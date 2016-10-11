@@ -29,10 +29,15 @@ $(function() {
   }
   //count down timer
 
-  $("#startButton").on('click', counter)
 
+  $('#startButton').on('click', function() {
+    soundtrack.src ="Scrambler.wav";
+    soundtrack.play();
+  });
+
+  $('#startButton').on('click', counter)
   function counter() {
-    var count = 10;
+    var count = 11;
     var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
     function timer() {
       count=count-1;
@@ -41,6 +46,7 @@ $(function() {
       }
       if (count === 0) {
         clearInterval(counter);
+        soundtrack.pause(true, true);
         alert("You're out of time");
         return;
       }
@@ -48,7 +54,6 @@ $(function() {
     }
   };
 
-  // });
 
   //button one on click function
 
@@ -78,16 +83,14 @@ $(function() {
     var playerWord = $('#currentPlayerWord').val().toLowerCase();
 
     if (playerWord === activeWord) {
-      alert("Correct!");
+      // alert("Correct!");
       score += playerWord.length;
       $('#playerScore').text(score);
     }
     else {
-      alert("Learn how to spell dummy!!");
+      // alert("Best check the dictionary!");
       $('#playerScore').text(score -=1);
     }
-    // console.log(activeWord);
-    // console.log(playerWord);
 
     $('#currentPlayerWord').val("");
     highScore.push(score);
@@ -103,12 +106,12 @@ $(function() {
     score = 0;
     $('#playerScore').text('0');
     $('#currentPlayerWord').val("");
+    soundtrack.play(true, true);
     counter();
 
     highScore.push(score);
     var currentHighScore = Math.max.apply(Math,highScore);
     $('#highScore').text(currentHighScore);
-
   });
 
   //  button two and button three. Very repetitive.

@@ -11,55 +11,64 @@
 
 </head>
 <body>
+  <header><h1>Word Jumble</h1></header>
+
   <img src = "https://lh6.ggpht.com/sg8dtuazJLsBOTyH4E6h435A6W4Ytns8O4ZCZyLqV4sEH3ZjeQ_h3EuoUJpz9uHC0bY=w300">
 
-  <h1>Word Unscrambler</h1>
 
   <main>
 
 
-  <div>  <button type="button" name="start-button" id="startButton" class="mycenter">Click here to start the game counter<audio id="Soundtrack" class="audio"></audio>
+    <div>  <button type="button" id="startButton" class="mycenter">Click here to start the game counter
     </button>
-</div>
+    <audio id="soundtrack" class="audio"></audio>
+  </div>
 
-    <h2>Please select your category below</h2>
+  <h2>Select your category below</h2>
+  <div>
+    <button type="button" align="center" name="CategoryOne" id="selectorButtonOne" class="selectors">WEB DEVELOPMENT TERMS</button>
+    <button type="button" align="center" name="CategoryTwo" id="selectorButtonTwo" class="selectors"><strong>COCKTAILS</strong></button>
+    <button type="button" align="center" name="CategoryThree" id="selectorButtonThree" class="selectors">CAPITAL CITIES</button>
+  </div>
+  <div id="scrambled"></div>
+
 <div>
-    <button type="button" align="center" name="CategoryOne" id="selectorButtonOne" class="selectors">Web Development terms!</button>
-    <button type="button" align="center" name="CategoryTwo" id="selectorButtonTwo" class="selectors"><strong>Cocktails</strong></button>
-    <button type="button" align="center" name="CategoryThree" id="selectorButtonThree" class="selectors">Capital Cities</button>
+
+  <form id="playerInput" action="type_submit">
+    <p>Type here quickly!</p>
+    <input type="text" id="currentPlayerWord">
+    <input type="submit" id="userInput">
+  </form>
+
+  <div id="timer" type="reset"></div>
+
+
 </div>
-    <div id="scrambled"></div>
 
-    <form id="playerInput" action="type_submit">
-      <p>Type here quickly!</p>
-      <input type="text" id="currentPlayerWord">
-      <input type="submit" name="userInput">
-    </form>
 
-    <div id="timer" type="reset"></div>
+<div>
+  <button type="reset" id="reset">Do you want to play again?!</button>
 
-    <div class="scoreboard">
-      <h2>Scoreboard</h2>
-      <table>
-        <tbody>
-          <tr>
-            <td id="playerScore" type="reset" class="scoreboard">0</td>
-            <td id="highScore" class="scoreboard">0</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th class="scoreboard">You</th>
-            <th class="scoreboard">High Score</th>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
+  <div class="scoreboard">
+    <h2>Scoreboard</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td id="playerScore" type="reset">0</td>
+          <td id="highScore">0</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Player</th>
+          <th>High Score</th>
+        </tr>
+      </tfoot>
+    </table>
 
-    <span>
-      <button type="reset" id="reset" align="right">Do you want to play again?!</button>
-    </span>
+  </div>
+</div>
 
-  </main>
+</main>
 </body>
 </html>
