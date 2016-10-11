@@ -11,7 +11,7 @@
 
 </head>
 <body>
-  <header><h1>Word Jumble</h1></header>
+  <header><h1>Word Unscrambler</h1><h3>Test your spelling, speed and knowledge<br>across a variety of areas with this random<br> word unscrambler</h3></header>
 
   <img src = "https://lh6.ggpht.com/sg8dtuazJLsBOTyH4E6h435A6W4Ytns8O4ZCZyLqV4sEH3ZjeQ_h3EuoUJpz9uHC0bY=w300">
 
@@ -31,41 +31,60 @@
     <button type="button" align="center" name="CategoryTwo" id="selectorButtonTwo" class="selectors"><strong>COCKTAILS</strong></button>
     <button type="button" align="center" name="CategoryThree" id="selectorButtonThree" class="selectors">CAPITAL CITIES</button>
   </div>
-  <div id="scrambled"></div>
+
+  <!-- <div id="container">
+  <div id="scrambled">  </div>
+  <div id="timer" type="reset">Timer</div>
+
+</div> -->
+
+<table>
+  <tbody>
+    <tr>
+      <td id="scrambled"></td>
+      <td id="timer" type="reset">Timer</td>
+
+    </tr>
+  </tbody>
+</table>
+
+
 
 <div id="container">
 
   <form id="playerInput" action="type_submit">
     <p>Type your answer below &#8681;</p>
-  <div>  <input type="text" id="currentPlayerWord"> </div>
-  <div>  <button type="submit" id="userInput">Submit</button></div>
-   <div id="timer" type="reset">Timer:</div>
+    <div>  <input type="text" id="currentPlayerWord"> </div>
+    <div>  <button type="submit" id="userInput">Submit</button></div>
+
   </form>
+</div>
 
 
 <div>
   <button type="reset" id="reset">PLAY AGAIN??</button>
 </div>
-  <div class="scoreboard">
-    <h2>Scoreboard</h2>
-    <table>
-      <tbody>
-        <tr>
-          <td id="playerScore" type="reset">Player = 0</td>
-          <td id="highScore">High Score = 0</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <!-- <th>Player</th>
-          <th>High Score</th> -->
 
-        </tr>
-      </tfoot>
-    </table>
 
-  </div>
-  </div>
+<div class="scoreboard">
+  <h2>Scoreboard</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td id="playerScore" type="reset">0</td>
+        <td id="highScore">0</td>
+      </tr>
+    </tbody>
+    <!-- <tfoot> -->
+      <tr>
+        <th>Player Score</th>
+        <th>High Score</th>
+
+      </tr>
+    <!-- </tfoot> -->
+  </table>
+
+</div>
 
 </main>
 </body>
