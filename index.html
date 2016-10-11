@@ -22,6 +22,7 @@
     <div>  <button type="button" id="startButton" class="mycenter">Click here to start the game counter
     </button>
     <audio id="soundtrack" class="audio"></audio>
+    <audio id="failSound" class="audio"></audio>
   </div>
 
   <h2>Select your category below</h2>
@@ -32,42 +33,39 @@
   </div>
   <div id="scrambled"></div>
 
-<div>
+<div id="container">
 
   <form id="playerInput" action="type_submit">
-    <p>Type here quickly!</p>
-    <input type="text" id="currentPlayerWord">
-    <input type="submit" id="userInput">
+    <p>Type your answer below &#8681;</p>
+  <div>  <input type="text" id="currentPlayerWord"> </div>
+  <div>  <button type="submit" id="userInput">Submit</button></div>
+   <div id="timer" type="reset">Timer:</div>
   </form>
-
-  <div id="timer" type="reset"></div>
-
-
-</div>
 
 
 <div>
-  <button type="reset" id="reset">Do you want to play again?!</button>
-
+  <button type="reset" id="reset">PLAY AGAIN??</button>
+</div>
   <div class="scoreboard">
     <h2>Scoreboard</h2>
     <table>
       <tbody>
         <tr>
-          <td id="playerScore" type="reset">0</td>
-          <td id="highScore">0</td>
+          <td id="playerScore" type="reset">Player = 0</td>
+          <td id="highScore">High Score = 0</td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <th>Player</th>
-          <th>High Score</th>
+          <!-- <th>Player</th>
+          <th>High Score</th> -->
+
         </tr>
       </tfoot>
     </table>
 
   </div>
-</div>
+  </div>
 
 </main>
 </body>

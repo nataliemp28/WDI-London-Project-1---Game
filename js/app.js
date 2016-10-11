@@ -10,10 +10,6 @@ $(function() {
   var highScore = [];
   var updatedHighScore = 0;
 
-  //   var categoryOne = $('#selectorButtonOne');
-  //   $.each(window.categoryOne, function(i, categoryOne) {
-  //     $selectorButtonOne.append
-  // });
 
   //shuffle function
   function shuffleWord(word) {
@@ -46,19 +42,15 @@ $(function() {
       }
       if (count === 0) {
         clearInterval(counter);
-        soundtrack.pause(true, true);
+        soundtrack.pause(true,true);
+        failSound.pause(true,true);
         alert("You're out of time");
         return;
       }
       $("#timer").text(count + " Seconds");
     }
   };
-
-
   //button one on click function
-
-  //
-  //
   // $('.selectors').on('click', function() {
   //   var $displayBox = $('#scrambled');
   //   activeWord = this.selectors[Math.floor(Math.random() * this.selectors.length)];
@@ -90,7 +82,11 @@ $(function() {
     else {
       // alert("Best check the dictionary!");
       $('#playerScore').text(score -=1);
+      soundtrack.pause(true,true);
+      failSound.src ="fail-buzzer.wav";
+      failSound.play();
     }
+      soundtrack.play(true,true);
 
     $('#currentPlayerWord').val("");
     highScore.push(score);
@@ -98,9 +94,7 @@ $(function() {
     $('#highScore').text(currentHighScore);
   });
 
-  //resets the scrambled word and score so that player can play again. Needed to insert the counter again
-  //therefore quite repetitive but it works!
-  //resets the score back to zero to re-increment
+  //resets the scrambled word and score so that player can play again.
   $('#reset').on('click', function() {
     $('#scrambled').empty();
     score = 0;
@@ -113,6 +107,9 @@ $(function() {
     var currentHighScore = Math.max.apply(Math,highScore);
     $('#highScore').text(currentHighScore);
   });
+
+
+
 
   //  button two and button three. Very repetitive.
   $('#selectorButtonThree').on('click', function() {
