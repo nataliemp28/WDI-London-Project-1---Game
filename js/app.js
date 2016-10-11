@@ -1,6 +1,4 @@
-// console.log("categoryOne (outside):", categoryOne);
 $(function() {
-  // console.log("categoryOne (inside):", window.categoryOne);
 
   var categoryOne = window.categoryOne;
   var categoryTwo = window.categoryTwo;
@@ -9,7 +7,6 @@ $(function() {
   var score = 0;
   var highScore = [];
   var updatedHighScore = 0;
-
 
   //shuffle function
   function shuffleWord(word) {
@@ -23,14 +20,12 @@ $(function() {
     }
     return wordArray.join('');
   }
-  //count down timer
 
-
+  //count down timer function
   $('#startButton').on('click', function() {
     soundtrack.src ="Scrambler.wav";
     soundtrack.play();
   });
-
   $('#startButton').on('click', counter)
   function counter() {
     var count = 11;
@@ -50,51 +45,43 @@ $(function() {
       $("#timer").text(count + " Seconds");
     }
   };
-  //button one on click function
-  // $('.selectors').on('click', function() {
-  //   var $displayBox = $('#scrambled');
-  //   activeWord = this.selectors[Math.floor(Math.random() * this.selectors.length)];
-  //   console.log(activeWord);
-  //
-  //   var shuffledWord = shuffleWord(activeWord);
-  //   $displayBox.text(shuffledWord);
-  // });
 
+  //function to run onclick of selctor button one. Calls the shuffle word function and applies it to
+  //the scrambled word that will be displayed in the display box.
   $('#selectorButtonOne').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryOne[Math.floor(Math.random() * categoryOne.length)];
     console.log(activeWord);
-
     var shuffledWord = shuffleWord(activeWord);
     $displayBox.text(shuffledWord);
   });
 
+  //player input function to run when player types. Checks for a match with the original word in the array
   $('#playerInput').submit(function(event) {
     event.preventDefault();
 
     var playerWord = $('#currentPlayerWord').val().toLowerCase();
 
     if (playerWord === activeWord) {
-      // alert("Correct!");
       score += playerWord.length;
       $('#playerScore').text(score);
     }
     else {
-      // alert("Best check the dictionary!");
       $('#playerScore').text(score -=1);
       soundtrack.pause(true,true);
       failSound.src ="fail-buzzer.wav";
       failSound.play();
     }
-      soundtrack.play(true,true);
+    soundtrack.play(true,true);
 
+//push the score to the highscore array. current high score will then check to make sure high score is up to date.
     $('#currentPlayerWord').val("");
     highScore.push(score);
     var currentHighScore = Math.max.apply(Math,highScore);
     $('#highScore').text(currentHighScore);
   });
 
-  //resets the scrambled word and score so that player can play again.
+  //resets the scrambled word and score so that player can play again. restarts soundtrack.
   $('#reset').on('click', function() {
     $('#scrambled').empty();
     score = 0;
@@ -108,10 +95,7 @@ $(function() {
     $('#highScore').text(currentHighScore);
   });
 
-
-
-
-  //  button two and button three. Very repetitive.
+  //  button two and button three. Very repetitive but basically do the same as button one above.
   $('#selectorButtonThree').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryThree[Math.floor(Math.random() * categoryThree.length)];
@@ -130,14 +114,3 @@ $(function() {
     $displayBox.text(shuffledWord);
   });
 });
-
-//
-//
-// $('.selectors').on('click', function() {
-//   var $displayBox = $('#scrambled');
-//   activeWord = this.selectors[Math.floor(Math.random() * this.length)];
-//   console.log(activeWord);
-//
-//   var shuffledWord = shuffleWord(activeWord);
-//   $displayBox.text(shuffledWord);
-// });
