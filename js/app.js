@@ -9,6 +9,7 @@ $(function() {
   var updatedHighScore = 0;
 
   //shuffle function
+
   function shuffleWord(word) {
     var j, x, i;
     var wordArray = word.split('');
@@ -22,13 +23,14 @@ $(function() {
   }
 
   //count down timer function
+
   $('#startButton').on('click', function() {
     soundtrack.src ="Scrambler.wav";
     soundtrack.play();
   });
   $('#startButton').on('click', counter)
   function counter() {
-    var count = 11;
+    var count = 31;
     var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
     function timer() {
       count=count-1;
@@ -48,6 +50,7 @@ $(function() {
 
   //function to run onclick of selctor button one. Calls the shuffle word function and applies it to
   //the scrambled word that will be displayed in the display box.
+
   $('#selectorButtonOne').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryOne[Math.floor(Math.random() * categoryOne.length)];
@@ -57,6 +60,7 @@ $(function() {
   });
 
   //player input function to run when player types. Checks for a match with the original word in the array
+
   $('#playerInput').submit(function(event) {
     event.preventDefault();
 
@@ -75,6 +79,7 @@ $(function() {
     soundtrack.play(true,true);
 
 //push the score to the highscore array. current high score will then check to make sure high score is up to date.
+
     $('#currentPlayerWord').val("");
     highScore.push(score);
     var currentHighScore = Math.max.apply(Math,highScore);
@@ -82,6 +87,7 @@ $(function() {
   });
 
   //resets the scrambled word and score so that player can play again. restarts soundtrack.
+
   $('#reset').on('click', function() {
     $('#scrambled').empty();
     score = 0;
@@ -96,6 +102,7 @@ $(function() {
   });
 
   //  button two and button three. Very repetitive but basically do the same as button one above.
+  
   $('#selectorButtonThree').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryThree[Math.floor(Math.random() * categoryThree.length)];
