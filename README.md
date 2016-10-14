@@ -12,11 +12,11 @@
 [https://natalie-wdi-london-p1.herokuapp.com/]
 
 ###How the game works
-1.Click on start the timer now to begin the countdown.
-2.Select the category of word you'd like to unscramble.
-3.Type in the box the unscrambled work.
-4.Click on submit and see your points increase! 
-5.At the end of the countdown your score will be recorded, select play again to try to beat your score and post a score on the highscore board.
+1. Click on start the timer now to begin the countdown.
+2. Select the category of word you'd like to unscramble.
+3. Type in the box the unscrambled work.
+4. Click on submit and see your points increase! 
+5. At the end of the countdown your score will be recorded, select play again to try to beat your score and post a score on the highscore board.
 
 ##Approach
  
