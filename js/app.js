@@ -1,16 +1,16 @@
 $(function() {
 
-  var categoryOne = window.categoryOne;
-  var categoryTwo = window.categoryTwo;
-  var categoryThree = window.categoryThree;
-  var activeWord;
-  var score = 0;
-  var highScore = [];
-  var updatedHighScore = 0;
+  let categoryOne = window.categoryOne;
+  let categoryTwo = window.categoryTwo;
+  let categoryThree = window.categoryThree;
+  let activeWord;
+  let score = 0;
+  let highScore = [];
+  let updatedHighScore = 0;
 
   //shuffle function
-
-  function shuffleWord(word) {
+let shuffleWord = word => {
+  // function shuffleWord(word)
     var j, x, i;
     var wordArray = word.split('');
     for (i = wordArray.length; i; i--) {
@@ -102,7 +102,7 @@ $(function() {
   });
 
   //  button two and button three. Very repetitive but basically do the same as button one above.
-  
+
   $('#selectorButtonThree').on('click', function() {
     var $displayBox = $('#scrambled');
     activeWord = categoryThree[Math.floor(Math.random() * categoryThree.length)];
