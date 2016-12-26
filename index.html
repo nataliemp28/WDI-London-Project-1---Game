@@ -11,60 +11,165 @@
 
 </head>
 <body>
-  <main>
-    <header><h1>Word Unscrambler</h1><h3>Test your spelling, speed and knowledge<br>across a variety of areas with this random<br> word unscrambler</h3></header>
 
-    <img src = "https://lh6.ggpht.com/sg8dtuazJLsBOTyH4E6h435A6W4Ytns8O4ZCZyLqV4sEH3ZjeQ_h3EuoUJpz9uHC0bY=w300">
+  <!-- <header><h1>Word Unscrambler</h1>
+  <h3>Test your spelling, speed and knowledge across a variety of areas with this random word unscrambler</h3>
+</header> -->
+<!--
+<img src = "/assets/wordsearch.jpg"> -->
+<!--
+<div>
 
-    <div>
-      <button type="button" id="startButton" class="mycenter">Start timer now!
-      </button>
+</div> -->
+
+<!-- <h2>Select your category below</h2>
+<div>
+<button type="button" name="CategoryOne" id="selectorButtonOne" class="selectors">WEB DEVELOPMENT TERMS</button>
+<button type="button" name="CategoryTwo" id="selectorButtonTwo" class="selectors"><strong>COCKTAILS</strong></button>
+<button type="button" name="CategoryThree" id="selectorButtonThree" class="selectors">CAPITAL CITIES</button>
+</div> -->
+
+<!-- <li>
+<ol id="scrambled"></ol>
+<ol id="timer" type="reset">Timer</ol>
+</li> -->
+
+<!-- <div id="container">
+<form id="playerInput" action="type_submit">
+<p>Type your answer below &#8681;</p>
+<div>  <input type="text" id="currentPlayerWord"> </div>
+<div>  <button type="submit" id="userInput">Submit</button></div>
+</form>
+</div> -->
+
+<!-- <div>
+<button type="reset" id="reset">PLAY AGAIN??</button>
+</div> -->
+
+<!-- <div class="scoreboard">
+<h2>Scoreboard</h2>
+<table>
+<tbody>
+<tr>
+<td id="playerScore" type="reset">0</td>
+<td id="highScore">0</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<th>Player Score</th>
+<th>High Score</th>
+</tr>
+</tfoot>
+</table> -->
+<!--
+</div> -->
+
+
+<header class="header">
+  <div class="grid-container outline">
+    <div class="row">
+      <div class="col-6 center"><h1>Word Unscramble</h1></div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-6 center"><h2>Test your spelling, speed and knowledge across a variety of areas with this random word unscrambler</h2></div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 center"><h2>Select your category below</h2></div>
+    </div>
+
+    <div class="row">
+      <div class="col-2 center"><button type="button" name="CategoryOne" id="selectorButtonOne" class="selectors">WEB DEVELOPMENT TERMS</button></div>
+      <div class="col-2 center"><button type="button" name="CategoryTwo" id="selectorButtonTwo" class="selectors"><strong>COCKTAILS</strong></button></div>
+      <div class="col-2 center"><button type="button" name="CategoryThree" id="selectorButtonThree" class="selectors">CAPITAL CITIES</button></div>
+    </div>
+
+    <div class="row">
+      <div class="col-6"><p></p></div>
+    </div>
+
+    <div class="row">
+      <div class="col-2"><p>col-1</p></div>
+      <div class="col-2"><p>col-1</p></div>
+      <div class="col-2 center"><h4><button type="button" id="startButton" class="mycenter">Start timer now</button></h4>
+      <p id="timer" type="reset">Timer</p></div>
       <audio id="soundtrack" class="audio"></audio>
       <audio id="failSound" class="audio"></audio>
     </div>
 
-    <h2>Select your category below</h2>
-    <div>
-      <button type="button" name="CategoryOne" id="selectorButtonOne" class="selectors">WEB DEVELOPMENT TERMS</button>
-      <button type="button" name="CategoryTwo" id="selectorButtonTwo" class="selectors"><strong>COCKTAILS</strong></button>
-      <button type="button" name="CategoryThree" id="selectorButtonThree" class="selectors">CAPITAL CITIES</button>
+    <div class="row">
+      <!-- <div class="col-2"><p>col-1</p></div>
+      <div class="col-2"><p>col-1</p></div> -->
+      <div class="col-6 center">
+        <li>
+          <ul id="scrambled"></ul>
+          </div>
+        </li>
+      </div>
+
+      <div class="row">
+        <!-- <div class="col-2"><p>col-1</p></div>
+        <div class="col-2"><p>col-1</p></div> -->
+        <div class="col-6 center">
+          <form id="playerInput" action="type_submit">
+            <p>Type your answer below &#8681;</p>
+            <div><input type="text" id="currentPlayerWord"></div>
+            <div><button type="submit" id="userInput">Submit</button></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row bottom-row">
+        <div class="col-5 scoreboard">
+          <p>Scoreboard</p>
+          <table>
+            <tr>
+              <td type="reset">0</td>
+              <td>0</td>
+            </tr>
+            <tr class="scoreboard">
+              <th>Player Score</th>
+              <th>High Score</th>
+            </tr>
+          </table>
+        </div>
+        <!-- <div class="col-3"><p>col-1</p></div> -->
+        <!-- <div class="col-3"><p>col-1</p></div> -->
+        <div class="col-1 right"><h4><button type="reset" id="reset">PLAY AGAIN??</button></h4></div>
+      </div>
     </div>
 
-    <li>
-      <ol id="scrambled"></ol>
-      <ol id="timer" type="reset">Timer</ol>
-    </li>
+    <!-- <div class="row">
+    <div class="col-1"><p>col-1</p></div>
+    <div class="col-1"><p>col-1</p></div>
+    <div class="col-1"><p>col-1</p></div>
+    <div class="col-1"><p>col-1</p></div>
+  </div>
+  <div class="row">
+  <div class="col-2"><p>col-2</p></div>
+  <div class="col-2"><p>col-2</p></div>
+  <div class="col-2"><p>col-2</p></div>
+</div>
+<div class="row">
+<div class="col-3"><p>col-3</p></div>
+<div class="col-3"><p>col-3</p></div>
+</div>
+<div class="row">
+<div class="col-4"><p>col-4</p></div>
+<div class="col-2"><p>col-2</p></div>
+</div>
+<div class="row">
+<div class="col-5"><p>col-5</p></div>
+<div class="col-1"><p>col-1</p></div>
+</div> -->
 
-    <div id="container">
-      <form id="playerInput" action="type_submit">
-        <p>Type your answer below &#8681;</p>
-        <div>  <input type="text" id="currentPlayerWord"> </div>
-        <div>  <button type="submit" id="userInput">Submit</button></div>
-      </form>
-    </div>
+<div class="footer">This footer will always be positioned at the bottom of the page, but <strong>not fixed</strong>.</div>
 
-    <div>
-      <button type="reset" id="reset">PLAY AGAIN??</button>
-    </div>
-
-    <div class="scoreboard">
-      <h2>Scoreboard</h2>
-      <table>
-        <tbody>
-          <tr>
-            <td id="playerScore" type="reset">0</td>
-            <td id="highScore">0</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th>Player Score</th>
-            <th>High Score</th>
-          </tr>
-        </tfoot>
-      </table>
-
-    </div>
-  </main>
+</div>
 </body>
 </html>

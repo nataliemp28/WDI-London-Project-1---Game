@@ -1,67 +1,9 @@
-#scrambled {
-  display: block;
-  width: 400px;
-  height: 70px;
-  line-height: 70px;
-  border: 1.5px solid white;
-  padding: 10px;
-  border-radius: 4px;
-  text-align: center;
-  /*margin-left: 40%;*/
-  background-color: #FFE658;
-  font-size: 45px;
-  font-family: "Arial Black", Gadget, sans-serif;
-  margin: 0 auto;
-}
-#timer {
-  background-color: #FFE658;
-  display: inline-block;
-  width: 150px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 14px;
-  text-align: left;
-  font-family: "Arial Black", Gadget, sans-serif;
-  border: 1.5px solid white;
-  border-radius: 4px;
-  position: absolute;
-  right: 122px;
-  top: 55%;
-  margin: 0 auto;
-}
-#startButton {
-  background-color: #FFE658;;
-  border: none;
-  color: #404040;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 4px;
-  margin: auto;
-  font-family: "Arial Black", Gadget, sans-serif;
-  width: 350px;
-}
-#selectorButtonOne, #selectorButtonTwo, #selectorButtonThree {
-  background-color: #404040;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 4px;
-  margin-bottom: 25px;
-  margin-left: 7.5px;
-  margin-right: 7.5px;
-  font-family: "Arial Black", Gadget, sans-serif;
-  width: 31.85%;
-}
-#selectorButtonOne:hover, #selectorButtonTwo:hover, #selectorButtonThree:hover {
-  background-color: #B71427;
-  color: white;
-}
-h1 {
+
+
+
+
+
+/*h1 {
   font-family: "Arial Black", Gadget, sans-serif;
   text-align: center;
   font-size: 50px;
@@ -99,109 +41,248 @@ header {
   display: inline-block;
 }
 
+
+#playerScore {
+  text-align: center;*/
+  /*margin-left: 70%;*/
+  /*font-size: 14px;
+  padding: 0px 40px 0px 30px;
+}
+#highScore {
+text-align: center;
+font-size: 14px;
+padding: 0px 30px 0px 40px;
+}
+th {
+text-align: center;
+font-size: 16px;
+padding: 0px 30px 0px 30px;
+}
+
+body {
+font-family: "Arial Black", Gadget, sans-serif;
+}
+.mycenter {
+position: relative;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%);
+}
+#reset {
+background-color: #404040;
+border: none;
+margin-left: 73%;
+color: white;
+padding: 15px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+border-radius: 4px;
+font-family: "Arial Black", Gadget, sans-serif;
+width: 250px;
+height: 50px;
+}
+#reset:hover {
+background-color: #B71427;
+color: white;
+}
+p {
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 16px;
+text-align: center;
+}
+
+#userInput {
+display: block;
+margin: 0 auto;
+width: 100px;
+font-size: 18px;
+margin-top: 5px;
+font-family: "Arial Black", Gadget, sans-serif;
+}
+container {
+margin: 0 auto;
+width: 960px;
+}
+li {
+list-style-type: none;*/
+
+
+body {
+  background-image: url("/assets/wordsearch.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /*opacity: 0.3;*/
+  background-attachment: fixed;
+  font-family: "Garamond", "Gadget", sans-serif;
+}
+h1  {
+  font-size: 20px;
+}
+h2 {
+  font-size: 16px;
+}
+
+.grid-container{
+  width: 100%;
+  max-width: 1200px;
+}
+
+/*-- clearfix hack -- */
+.row:before,
+.row:after {
+  content:"";
+  display: table ;
+  clear:both;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  width: 16.66%;
+  /*-- gutter -- */
+  padding: 0px;
+  background-color: none;
+}
+
+.col-1{ width: 16.66%; }
+.col-2{ width: 33.33%; }
+.col-3{ width: 50%;    }
+.col-4{ width: 66.66%; }
+.col-5{ width: 83.33%; }
+.col-6{ width: 100%;   }
+
+/*.outline, .outline *{
+outline: 1px solid #F6A1A1;
+}*/
+
+/*some extra column content styling*/
+[class*='col-'] > p {
+  background-color: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.center {
+  text-align: center;
+}
+.right {
+  float: right;
+}
+.left {
+  text-align: left;
+  /*margin: 0px 15px 15px 15px;*/
+}
+#selectorButtonOne, #selectorButtonTwo, #selectorButtonThree {
+  background-color: #404040;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  /*margin-bottom: 25px;*/
+  /*margin-left: 7.5px;
+  margin-right: 7.5px;*/
+  width: auto;
+  font-weight: bold;
+}
+#selectorButtonOne:hover, #selectorButtonTwo:hover, #selectorButtonThree:hover {
+  background-color: #B71427;
+  color: white;
+}
+.footer {
+  position: bottom;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+#startButton {
+  background-color: #FFE658;;
+  border: none;
+  color: #404040;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: auto;
+  width: auto;
+}
+/*#timer {
+background-color: #FFE658;
+display: inline-block;
+width: 150px;
+height: 50px;
+line-height: 50px;
+font-size: 14px;
+text-align: left;
+border: 1.5px solid white;
+border-radius: 4px;
+/*position: absolute;
+right: 122px;
+top: 55%;
+margin: 0 auto;
+}*/
+
+#currentPlayerWord {
+  background-color: #6DBDD6;
+  color: black;
+  font-size: 14px;
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+  /*display: block;*/
+  /*box-shadow: 10px 10px 5px #888888;*/
+  text-align: center;
+}
+#scrambled {
+  /*display: block;*/
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  border: 1.5px solid white;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+  /*margin-left: 40%;*/
+  background-color: #FFE658;
+  font-size: 18px;
+  margin: 0 auto;
+}
 .scoreboard {
   font-size: 16px;
   padding: 5px 0px 0px 0px;
   border: 1.5px solid white;
   text-align: center;
-  margin-left: 2%;
-  margin-top: -10.2%;
-  width: 350px;
-  height: 120px;
+  margin-bottom: 10px;
+  /*margin-left: 2%;
+  margin-top: -10.2%;*/
+  width: 150px;
+  height: 40px;
   background-color: #FFE658;
   color: black;
   border-radius: 4px;
 }
-#playerScore {
-  text-align: center;
-  /*margin-left: 70%;*/
-  font-size: 14px;
-  padding: 0px 40px 0px 30px;
+.container {
+  margin-left: 40px;
+  margin-right: 40px;
 }
-#highScore {
-  text-align: center;
-  font-size: 14px;
-  padding: 0px 30px 0px 40px;
+.header {
+  background-color: teal;
 }
-th {
-  text-align: center;
-  font-size: 16px;
-  padding: 0px 30px 0px 30px;
-}
-img {
-  opacity: 0.3;
-  z-index: -999;
-  min-height: 100%;
-  min-width: 100%;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-body {
-  font-family: "Arial Black", Gadget, sans-serif;
-}
-.mycenter {
-  position: relative;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-#reset {
-  background-color: #404040;
-  border: none;
-  margin-left: 73%;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 4px;
-  font-family: "Arial Black", Gadget, sans-serif;
-  width: 250px;
-  height: 50px;
-}
-#reset:hover {
-  background-color: #B71427;
-  color: white;
-}
-p {
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 16px;
-  text-align: center;
-}
-#currentPlayerWord {
-  background-color: #6DBDD6;
-  color: black;
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 20px;
-  width: 300px;
-  height: 50px;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 10px 10px 5px #888888;
-  text-align: center;
-}
-#userInput {
-  display: block;
-  margin: 0 auto;
-  width: 100px;
-  font-size: 18px;
-  margin-top: 5px;
-  font-family: "Arial Black", Gadget, sans-serif;
-}
-container {
-  margin: 0 auto;
-  width: 960px;
-}
-li {
+ul, li {
   list-style-type: none;
 }
-
-
-
-  /*#404040 - dark grey
-  #6DBDD6 - light blue
-  #B71427 - red
-  #FFE658 - yellow*/
+.bottom-row {
+  height: 100px;
+}
